@@ -1,3 +1,4 @@
+#!/bin/bash
 ### INSTALACION
 sudo hostnamectl set-hostname ldapserver.micentro.edu
 sudo nano /etc/hosts ->
