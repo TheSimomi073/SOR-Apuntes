@@ -1,0 +1,14 @@
+
+### Server
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens18:
+      dhcp4: true
+    ens19:
+      addresses: [193.168.1.220/24]
+      nameservers:
+        addresses: [8.8.8.8, 1.1.1.1]
+
