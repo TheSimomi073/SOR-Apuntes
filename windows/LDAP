@@ -99,8 +99,6 @@ session optional        pam_mkhomedir.so skel=/etc/skel umask=077
 
 
 
-
-
 ### Comandos Cliente
 # En caso de equivocarse en la configuración del LDAP
 sudo dpkg-reconfigure ldap-auth-config
@@ -110,3 +108,10 @@ sudo getent passwd
 ldapsearch -x -H ldap://193.168.1.220 -b "dc=micentro,dc=edu"
 # Meterse en usuario de ldap
 sudo su - khalid
+
+
+
+### Instalacion sesión gráfica
+sudo apt install nslcd
+sudo reboot
+
