@@ -12,3 +12,19 @@ network:
       nameservers:
         addresses: [8.8.8.8, 1.1.1.1]
 
+### Cliente
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens18:
+      dhcp4: false
+      addresses: [193.168.1.3/24]
+      routes:
+      - to: default
+        via: 193.168.1.220
+      nameservers:
+        addresses: [193.168.1.220, 8.8.8.8]
+
+
