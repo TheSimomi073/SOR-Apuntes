@@ -63,12 +63,13 @@ mail: jaimemargar@micentro.edu
 ### INSTALACION CLIENTE
 sudo apt-get install libnss-ldap libpam-ldap ldap-utils -y
 En configuracion -> 
-URL: ldap://193.168.1.220
-dc=micentro,dc=edu
-LDAP version: 3
-Make local database: Yes
-Require login: No
-cn=admin,dc=micentro,dc=edu
+* URL: ldap://193.168.1.220
+* dc=micentro,dc=edu
+* LDAP version: 3
+* Make local database: Yes
+* Require login: No
+* cn=admin,dc=micentro,dc=edu
+
 sudo nano /etc/nsswitch.conf ->
 # /etc/nsswitch.conf
 #
