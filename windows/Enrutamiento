@@ -28,3 +28,25 @@ network:
         addresses: [193.168.1.220, 8.8.8.8]
 
 
+
+### Script enruta.sh con permisos 777
+#!/bin/bash
+echo "1" > /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A POSTROUTING -s 193.168.1.0/24 -o ens18 -j MASQUERADE
+iptables -A FORWARD -j ACCEPT
+
+
+
+### Script entuta.service con permisos 777
+#!/bin/bash
+[Unit]
+Description=Script service
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/home/usuario/enruta.sh
+
+[Install]
+WantedBy=multi-user.target
+
